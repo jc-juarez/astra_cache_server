@@ -23,7 +23,7 @@ struct logger_configuration
 {
 
     //
-    // Constructor. Defaults the values for the logger configuration.
+    // Constructor.
     //
     logger_configuration();
 
@@ -36,6 +36,34 @@ struct logger_configuration
     // Path to the directory for storing logs files.
     //
     std::string m_logs_directory_path;
+
+    //
+    // Default debug mode enabled option.
+    //
+    static constexpr bool c_default_debug_mode_enabled = true;
+
+};
+
+//
+// System server container for storing server options.
+//
+struct server_configuration
+{
+
+    //
+    // Constructor.
+    //
+    server_configuration();
+
+    //
+    // Port number for the HTTP server.
+    //
+    uint32 m_port_number;
+
+    //
+    // Default server port number.
+    //
+    static constexpr uint32 c_default_port_number = 8080u;
 
 };
 
@@ -51,7 +79,6 @@ public:
     // Default constructor.
     //
     system_configuration(
-        status_code* p_status,
         const std::vector<std::string>& p_command_line_arguments);
 
     //
@@ -60,9 +87,9 @@ public:
     logger_configuration m_logger_configuration;
 
     //
-    // Default debug mode enabled option.
+    // Container for the logger configuration.
     //
-    static constexpr bool c_default_debug_mode_enabled = true;
+    server_configuration m_server_configuration;
 
 private:
 
@@ -134,6 +161,11 @@ private:
     // Logs directory flag name.
     //
     static constexpr const character c_logs_directory_flag = 'l';
+
+    //
+    // Server port number flag name.
+    //
+    static constexpr const character c_port_number = 'p';
     
 };
 

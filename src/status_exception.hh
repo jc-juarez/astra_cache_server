@@ -17,7 +17,7 @@ namespace astra
 //
 // Exception wrapper class for status codes.
 //
-class status_exception : std::runtime_error
+class status_exception : public std::runtime_error
 {
 
 public:

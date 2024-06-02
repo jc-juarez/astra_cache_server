@@ -13,8 +13,12 @@ namespace astra
 {
 
 logger_configuration::logger_configuration()
-    : m_debug_mode_enabled(system_configuration::c_default_debug_mode_enabled),
+    : m_debug_mode_enabled(c_default_debug_mode_enabled),
       m_logs_directory_path("")
+{}
+
+server_configuration::server_configuration()
+    : m_port_number(c_default_port_number)
 {}
 
 status_code
@@ -44,24 +48,33 @@ system_configuration::set_logs_directory_path(
 }
 
 system_configuration::system_configuration(
-    status_code* p_status,
     const std::vector<std::string>& p_command_line_arguments)
 {
+    status_code status = status::success;
+
     std::string logs_directory_path;
 
     if (!p_command_line_arguments.empty())
     {
-        *p_status = parse_command_line_arguments(
+        status = parse_command_line_arguments(
             p_command_line_arguments,
             &logs_directory_path);
 
-        return_if_failed(*p_status)
+        if (status::failed(status))
+        {
+            throw status_exception(status, "Failed to parse command line arguments.");
+        }
     }
 
     //
     // Initialize runtime defined configurations.
     //
-    set_logs_directory_path(logs_directory_path);
+    status = set_logs_directory_path(logs_directory_path);
+
+    if (status::failed(status))
+    {
+        throw status_exception(status, "Failed to set the logs directory path.");
+    }
 }
 
 status_code
@@ -69,7 +82,7 @@ system_configuration::parse_command_line_arguments(
     const std::vector<std::string>& p_command_line_arguments,
     std::string* p_logs_directory_path)
 {
-    std::string astra_executable_name = p_command_line_arguments.front();
+    const std::string astra_executable_name = p_command_line_arguments.front();
 
     //
     // Configurations override is based on flags.
@@ -83,7 +96,8 @@ system_configuration::parse_command_line_arguments(
     const std::unordered_set<character> available_flags
     {
         c_debug_mode_enabled_flag,
-        c_logs_directory_flag
+        c_logs_directory_flag,
+        c_port_number
     };
 
     for (const std::string& flag : p_command_line_arguments)
@@ -143,6 +157,22 @@ system_configuration::parse_command_line_arguments(
             case c_logs_directory_flag:
             {
                 *p_logs_directory_path = flag_value;
+
+                break;
+            }
+            case c_port_number:
+            {
+                try
+                {
+                    m_server_configuration.m_port_number = std::stoi(flag_value);
+                }
+                catch (const std::exception& exception)
+                {
+                    log_critical_message("Astra cache server could not parse the '{}' flag value.",
+                        flag_value);
+
+                    return status::incorrect_parameters;
+                }
 
                 break;
             }
