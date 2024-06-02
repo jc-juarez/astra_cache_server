@@ -123,6 +123,60 @@ astra/fast:
 	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/build
 .PHONY : astra/fast
 
+src/filesystem_utilities.o: src/filesystem_utilities.cc.o
+
+.PHONY : src/filesystem_utilities.o
+
+# target to build an object file
+src/filesystem_utilities.cc.o:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/filesystem_utilities.cc.o
+.PHONY : src/filesystem_utilities.cc.o
+
+src/filesystem_utilities.i: src/filesystem_utilities.cc.i
+
+.PHONY : src/filesystem_utilities.i
+
+# target to preprocess a source file
+src/filesystem_utilities.cc.i:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/filesystem_utilities.cc.i
+.PHONY : src/filesystem_utilities.cc.i
+
+src/filesystem_utilities.s: src/filesystem_utilities.cc.s
+
+.PHONY : src/filesystem_utilities.s
+
+# target to generate assembly for a file
+src/filesystem_utilities.cc.s:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/filesystem_utilities.cc.s
+.PHONY : src/filesystem_utilities.cc.s
+
+src/logger.o: src/logger.cc.o
+
+.PHONY : src/logger.o
+
+# target to build an object file
+src/logger.cc.o:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/logger.cc.o
+.PHONY : src/logger.cc.o
+
+src/logger.i: src/logger.cc.i
+
+.PHONY : src/logger.i
+
+# target to preprocess a source file
+src/logger.cc.i:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/logger.cc.i
+.PHONY : src/logger.cc.i
+
+src/logger.s: src/logger.cc.s
+
+.PHONY : src/logger.s
+
+# target to generate assembly for a file
+src/logger.cc.s:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/logger.cc.s
+.PHONY : src/logger.cc.s
+
 src/main.o: src/main.cc.o
 
 .PHONY : src/main.o
@@ -149,6 +203,33 @@ src/main.s: src/main.cc.s
 src/main.cc.s:
 	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/main.cc.s
 .PHONY : src/main.cc.s
+
+src/random_identifier_generator.o: src/random_identifier_generator.cc.o
+
+.PHONY : src/random_identifier_generator.o
+
+# target to build an object file
+src/random_identifier_generator.cc.o:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/random_identifier_generator.cc.o
+.PHONY : src/random_identifier_generator.cc.o
+
+src/random_identifier_generator.i: src/random_identifier_generator.cc.i
+
+.PHONY : src/random_identifier_generator.i
+
+# target to preprocess a source file
+src/random_identifier_generator.cc.i:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/random_identifier_generator.cc.i
+.PHONY : src/random_identifier_generator.cc.i
+
+src/random_identifier_generator.s: src/random_identifier_generator.cc.s
+
+.PHONY : src/random_identifier_generator.s
+
+# target to generate assembly for a file
+src/random_identifier_generator.cc.s:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/random_identifier_generator.cc.s
+.PHONY : src/random_identifier_generator.cc.s
 
 src/server_endpoints/base_endpoint.o: src/server_endpoints/base_endpoint.cc.o
 
@@ -231,6 +312,33 @@ src/status_exception.cc.s:
 	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/status_exception.cc.s
 .PHONY : src/status_exception.cc.s
 
+src/system_configuration.o: src/system_configuration.cc.o
+
+.PHONY : src/system_configuration.o
+
+# target to build an object file
+src/system_configuration.cc.o:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/system_configuration.cc.o
+.PHONY : src/system_configuration.cc.o
+
+src/system_configuration.i: src/system_configuration.cc.i
+
+.PHONY : src/system_configuration.i
+
+# target to preprocess a source file
+src/system_configuration.cc.i:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/system_configuration.cc.i
+.PHONY : src/system_configuration.cc.i
+
+src/system_configuration.s: src/system_configuration.cc.s
+
+.PHONY : src/system_configuration.s
+
+# target to generate assembly for a file
+src/system_configuration.cc.s:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/system_configuration.cc.s
+.PHONY : src/system_configuration.cc.s
+
 src/system_server.o: src/system_server.cc.o
 
 .PHONY : src/system_server.o
@@ -258,6 +366,33 @@ src/system_server.cc.s:
 	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/system_server.cc.s
 .PHONY : src/system_server.cc.s
 
+src/timestamp.o: src/timestamp.cc.o
+
+.PHONY : src/timestamp.o
+
+# target to build an object file
+src/timestamp.cc.o:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/timestamp.cc.o
+.PHONY : src/timestamp.cc.o
+
+src/timestamp.i: src/timestamp.cc.i
+
+.PHONY : src/timestamp.i
+
+# target to preprocess a source file
+src/timestamp.cc.i:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/timestamp.cc.i
+.PHONY : src/timestamp.cc.i
+
+src/timestamp.s: src/timestamp.cc.s
+
+.PHONY : src/timestamp.s
+
+# target to generate assembly for a file
+src/timestamp.cc.s:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/timestamp.cc.s
+.PHONY : src/timestamp.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -267,9 +402,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... astra"
+	@echo "... src/filesystem_utilities.o"
+	@echo "... src/filesystem_utilities.i"
+	@echo "... src/filesystem_utilities.s"
+	@echo "... src/logger.o"
+	@echo "... src/logger.i"
+	@echo "... src/logger.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/random_identifier_generator.o"
+	@echo "... src/random_identifier_generator.i"
+	@echo "... src/random_identifier_generator.s"
 	@echo "... src/server_endpoints/base_endpoint.o"
 	@echo "... src/server_endpoints/base_endpoint.i"
 	@echo "... src/server_endpoints/base_endpoint.s"
@@ -279,9 +423,15 @@ help:
 	@echo "... src/status_exception.o"
 	@echo "... src/status_exception.i"
 	@echo "... src/status_exception.s"
+	@echo "... src/system_configuration.o"
+	@echo "... src/system_configuration.i"
+	@echo "... src/system_configuration.s"
 	@echo "... src/system_server.o"
 	@echo "... src/system_server.i"
 	@echo "... src/system_server.s"
+	@echo "... src/timestamp.o"
+	@echo "... src/timestamp.i"
+	@echo "... src/timestamp.s"
 .PHONY : help
 
 

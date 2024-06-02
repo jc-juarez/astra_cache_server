@@ -1,5 +1,5 @@
 // *************************************
-// Astra Caching Server
+// Astra Cache Server
 // Server
 // 'register_object_endpoint.hh'
 // Author: jcjuarez
@@ -26,7 +26,7 @@ class register_object_endpoint : public base_endpoint
 public:
 
     //
-    // Constructor. Initializes the register_object_endpoint class.
+    // Constructor.
     //
     register_object_endpoint( /* Pass the caching_engine class handle here. */ );
 

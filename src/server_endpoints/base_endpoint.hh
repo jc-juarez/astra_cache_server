@@ -1,5 +1,5 @@
 // *************************************
-// Astra Caching Server
+// Astra Cache Server
 // Server
 // 'base_endpoint.hh'
 // Author: jcjuarez
@@ -28,7 +28,7 @@ class base_endpoint : public httpserver::http_resource
 public:
 
     //
-    // Constructor. Initializes the base_endpoint class.
+    // Constructor.
     //
     base_endpoint( /* Pass the caching_engine class handle here. */ );
 

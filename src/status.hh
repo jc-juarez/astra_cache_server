@@ -1,5 +1,5 @@
 // *************************************
-// Astra Caching Server
+// Astra Cache Server
 // Utilities
 // 'status.hh'
 // Author: jcjuarez
@@ -99,6 +99,51 @@ public:
     // Failure to start the main HTTP server.
     //
     status_code_definition(http_server_startup_failed, 0x8'0000002);
+
+    //
+    // Logger is not yet initialized.
+    //
+    status_code_definition(logger_not_initialized, 0x8'0000003);
+
+    //
+    // Logger is already initialized.
+    //
+    status_code_definition(logger_already_initialized, 0x8'0000004);
+
+    //
+    // Incorrect parameters.
+    //
+    status_code_definition(incorrect_parameters, 0x8'0000005);
+
+    //
+    // Failure to create a directory.
+    //
+    status_code_definition(directory_creation_failed, 0x8'0000006);
+    
+    //
+    // Failure to retrieve an environment variable.
+    //
+    status_code_definition(environment_variable_access_failed, 0x8'0000007);
+
+    //
+    // Malformed commmand line arguments provided.
+    //
+    status_code_definition(malformed_command_line_arguments, 0x8'0000008);
+
+    //
+    // Provided configuration flag does not exist.
+    //
+    status_code_definition(configuration_flag_not_recognized, 0x8'0000009);
+    
+    //
+    // Failed to write to a file.
+    //
+    status_code_definition(file_write_failed, 0x8'0000010);
+
+    //
+    // Failed to log to a file because incremental search reached its retry limit.
+    //
+    status_code_definition(logging_incremental_search_failed, 0x8'0000011);
 
 };
 

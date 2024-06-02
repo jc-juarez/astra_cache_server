@@ -1,5 +1,5 @@
 // *************************************
-// Astra Caching Server
+// Astra Cache Server
 // Server
 // 'system_server.hh'
 // Author: jcjuarez
@@ -9,8 +9,7 @@
 #define SYSTEM_SERVER_
 
 #include <memory>
-#include "status.hh"
-#include "utilities.hh"
+#include "common.hh"
 #include <httpserver.hpp>
 
 namespace astra
@@ -27,7 +26,7 @@ class system_server
 public:
 
     //
-    // Constructor. Initializes the system_server class.
+    // Constructor.
     //
     system_server();
 

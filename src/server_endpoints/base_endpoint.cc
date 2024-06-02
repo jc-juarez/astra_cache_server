@@ -1,5 +1,5 @@
 // *************************************
-// Astra Caching Server
+// Astra Cache Server
 // Server
 // 'base_endpoint.cc'
 // Author: jcjuarez

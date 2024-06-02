@@ -4,11 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/jcjuarez/astra-caching-server/src/filesystem_utilities.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/filesystem_utilities.cc.o"
+  "/home/jcjuarez/astra-caching-server/src/logger.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/logger.cc.o"
   "/home/jcjuarez/astra-caching-server/src/main.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/main.cc.o"
+  "/home/jcjuarez/astra-caching-server/src/random_identifier_generator.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/random_identifier_generator.cc.o"
   "/home/jcjuarez/astra-caching-server/src/server_endpoints/base_endpoint.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o"
   "/home/jcjuarez/astra-caching-server/src/server_endpoints/register_object_endpoint.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o"
   "/home/jcjuarez/astra-caching-server/src/status_exception.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/status_exception.cc.o"
+  "/home/jcjuarez/astra-caching-server/src/system_configuration.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/system_configuration.cc.o"
   "/home/jcjuarez/astra-caching-server/src/system_server.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/system_server.cc.o"
+  "/home/jcjuarez/astra-caching-server/src/timestamp.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/timestamp.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

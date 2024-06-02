@@ -1,5 +1,5 @@
 // *************************************
-// Astra Caching Server
+// Astra Cache Server
 // Utilities
 // 'status_exception.cc'
 // Author: jcjuarez

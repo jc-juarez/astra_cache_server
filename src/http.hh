@@ -1,5 +1,5 @@
 // *************************************
-// Astra Caching Server
+// Astra Cache Server
 // Utilities
 // 'http.hh'
 // Author: jcjuarez
@@ -8,7 +8,7 @@
 #ifndef HTTP_
 #define HTTP_
 
-#include "utilities.hh"
+#include "common.hh"
 
 namespace astra
 {

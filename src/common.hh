@@ -1,17 +1,33 @@
 // *************************************
-// Astra Caching Server
+// Astra Cache Server
 // Utilities
-// 'utilities.hh'
+// 'common.hh'
 // Author: jcjuarez
 // *************************************
 
-#ifndef UTILITIES_
-#define UTILITIES_
+#ifndef COMMON_
+#define COMMON_
 
 #include <cstdint>
+#include "status.hh"
 
 namespace astra
 {
+
+//
+// Return if failed macro.
+//
+#define return_if_failed(p_status) if (status::failed(p_status)) { return; }
+
+//
+// Return status if failed macro.
+//
+#define return_status_if_failed(p_status) if (status::failed(p_status)) { return p_status; }
+
+//
+// Return status if succeeded macro.
+//
+#define return_status_if_succeeded(p_status) if (status::succeeded(p_status)) { return p_status; }
 
 //
 // Unsigned 1 byte.
@@ -65,6 +81,6 @@ using single_precision = float;
 //
 using double_precision = double;
 
-} // namespace modula.
+} // namespace astra.
 
 #endif

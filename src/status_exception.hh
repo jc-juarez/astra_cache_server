@@ -1,5 +1,5 @@
 // *************************************
-// Astra Caching Server
+// Astra Cache Server
 // Utilities
 // 'status_exception.hh'
 // Author: jcjuarez
@@ -10,7 +10,7 @@
 
 #include <stdexcept>
 #include "status.hh"
-#include "utilities.hh"
+#include "common.hh"
 
 namespace astra
 {
@@ -24,7 +24,7 @@ class status_exception : std::runtime_error
 public:
 
     //
-    // Constructor. Initializes the status_exception class.
+    // Constructor.
     //
     status_exception(
         const status_code p_status,

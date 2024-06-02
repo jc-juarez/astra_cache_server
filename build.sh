@@ -1,6 +1,6 @@
 #!/bin/bash
 # *************************************
-# Astra Caching Server
+# Astra Cache Server
 # Build
 # 'build.sh'
 # Author: jcjuarez
