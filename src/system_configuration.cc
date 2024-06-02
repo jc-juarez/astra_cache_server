@@ -32,8 +32,8 @@ system_configuration::set_logs_directory_path(
 
     if (home_environment_variable == nullptr)
     {
-        logger::log_error_fallback(std::format("<!> Astra cache server system configuration could not access the '{}' environment variable.\n",
-            c_default_logs_directory_environment_variable).c_str());
+        log_critical_message("Astra cache server system configuration could not access the '{}' environment variable.",
+            c_default_logs_directory_environment_variable);
         
         return status::environment_variable_access_failed;
     }
@@ -101,8 +101,8 @@ system_configuration::parse_command_line_arguments(
             flag[flag_indicator_symbol_index] != c_flag_indicator ||
             flag[flag_assignment_symbol_index] != c_flag_assignment)
         {            
-            logger::log_error_fallback(std::format("<!> Astra cache server could not parse the '{}' flag.\n",
-                flag.c_str()).c_str());
+            log_critical_message("Astra cache server could not parse the '{}' flag.",
+                flag.c_str());
 
             return status::malformed_command_line_arguments;
         }
@@ -114,8 +114,8 @@ system_configuration::parse_command_line_arguments(
         //
         if (available_flags.find(flag_name) == available_flags.end())
         {
-            logger::log_error_fallback(std::format("<!> Astra cache server could not recognize the '{}' flag name.\n",
-                flag_name).c_str());
+            log_critical_message("Astra cache server could not recognize the '{}' flag name.",
+                flag_name);
 
             return status::configuration_flag_not_recognized;
         }
@@ -132,8 +132,8 @@ system_configuration::parse_command_line_arguments(
 
                 if (status::failed(status))
                 {
-                    logger::log_error_fallback(std::format("<!> Astra cache server could not parse the '{}' flag value.\n",
-                        flag_value).c_str());
+                    log_critical_message("Astra cache server could not parse the '{}' flag value.",
+                        flag_value);
 
                     return status;
                 }

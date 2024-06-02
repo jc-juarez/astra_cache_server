@@ -6,8 +6,6 @@
 // *************************************
 
 #include "system_server.hh"
-#include "status_exception.hh"
-#include <iostream> // delete.
 #include "server_endpoints/register_object_endpoint.hh"
 
 namespace astra
@@ -40,7 +38,7 @@ system_server::start()
     catch (const std::exception& exception)
     {
         // Log exception error.
-        std::cout << "Catched exception" << std::endl;
+        // std::cout << "Catched exception" << std::endl;
     }
 
     return status;

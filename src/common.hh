@@ -83,4 +83,9 @@ using double_precision = double;
 
 } // namespace astra.
 
+//
+// Include the exception class after all aliases have been resolved.
+//
+#include "status_exception.hh"
+
 #endif

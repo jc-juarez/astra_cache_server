@@ -20,10 +20,9 @@ namespace astra
 
 thread_local std::string g_activity_id = logger::c_default_activity_id;
 
-bool logger::s_initialized = false;
+std::atomic<bool> logger::s_initialized = false;
 
 logger::logger(
-    status_code* p_status,
     std::string* p_initial_message,
     const logger_configuration* p_logger_configuration)
     : m_logs_files_count(0),
@@ -36,11 +35,9 @@ logger::logger(
     //
     if (p_logger_configuration == nullptr)
     {
-        *p_status = status::incorrect_parameters;
-        
-        log_error_fallback(std::format("<!> Astra cache server logger has received incorrect initialization configuration parameters.\n").c_str());
+        log_critical_message("Astra cache server logger has received incorrect initialization configuration parameters.");
 
-        return;
+        throw status_exception(status::incorrect_parameters, "Incorrect initialization configuration parameters.");
     }
 
     m_debug_mode_enabled = p_logger_configuration->m_debug_mode_enabled;
@@ -64,17 +61,17 @@ logger::logger(
     m_session_id = session_id;
 
     std::string exception;
-    *p_status = utilities::filesystem_utilities::create_directory(
+    status_code status = utilities::filesystem_utilities::create_directory(
         session_logs_directory_path.string(),
         &exception);
 
-    if (status::failed(*p_status))
+    if (status::failed(status))
     {
-        log_error_fallback(std::format("<!> Astra cache server logger failed to create session logs directory '{}'. Exception: '{}'.\n",
+        log_critical_message("Astra cache server logger failed to create session logs directory '{}'. Exception: '{}'.",
             session_logs_directory_path.string().c_str(),
-            exception.c_str()).c_str());
+            exception.c_str());
 
-        return;
+        throw status_exception(status, "Failed to create session logs directory.");
     }
 
     m_session_logs_directory_path = session_logs_directory_path;
@@ -85,6 +82,11 @@ logger::logger(
     // Set the initially pointed logs file after successful initialization.
     //
     m_current_logs_file_path = get_current_logs_file_path();
+
+    //
+    // Set the fact that the logger is now initialized.
+    //
+    s_initialized = true;
 }
 
 status_code
@@ -93,12 +95,10 @@ logger::initialize(
 {
     if (s_initialized)
     {
-        log_error_fallback(std::format("<!> Astra cache server logger has already been initialized.\n").c_str());
+        log_critical_message("Astra cache server logger has already been initialized.");
 
         return status::logger_already_initialized;
     }
-
-    s_initialized = true;
 
     status_code status = status::success;
 
@@ -117,10 +117,11 @@ logger::log(
     status_code* p_status,
     const logger_configuration* p_logger_configuration)
 {
-    if (!s_initialized)
+    if (!s_initialized &&
+        p_logger_configuration == nullptr)
     {
-        log_error_fallback(std::format("<!> Astra cache server logger has not been yet initialized.\n",
-            status::logger_not_initialized).c_str());
+        log_critical_message("Astra cache server logger has not been yet initialized.",
+            status::logger_not_initialized);
 
         return;
     }
@@ -129,28 +130,32 @@ logger::log(
     // Forceful lazy initialization for the
     // singleton through the initialize method.
     //
-    static logger logger_singleton_instance(
-        p_status,
-        &p_message,
-        p_logger_configuration);
-
-    if (p_status != nullptr &&
-        status::failed(*p_status))
+    try
     {
-        return;
-    }
+        static logger logger_singleton_instance(
+            &p_message,
+            p_logger_configuration);
 
-    logger_singleton_instance.log_message(
-        p_log_level,
-        p_message.c_str());
+        logger_singleton_instance.log_message(
+            p_log_level,
+            p_message.c_str());
+    }
+    catch (const status_exception& exception)
+    {
+        //
+        // Initialization has failed; the error will be circled back to the upper level caller.
+        //
+        *p_status = exception.get_status();
+    }
 }
 
 void
 logger::log_error_fallback(
-    const character* p_message)
+    std::string&& p_message)
 {
-    log_to_syslog(p_message);
-    log_error_to_console(p_message);
+    const std::string formatted_message = "<!> Critical error: " + p_message + "\n";
+    log_to_syslog(formatted_message.c_str());
+    log_error_to_console(formatted_message.c_str());
 }
 
 void
@@ -164,6 +169,12 @@ void
 logger::reset_activity_id()
 {
     g_activity_id = c_default_activity_id;
+}
+
+bool
+logger::is_logger_initialized()
+{
+    return s_initialized;
 }
 
 void

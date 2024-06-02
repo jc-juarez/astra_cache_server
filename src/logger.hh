@@ -9,8 +9,10 @@
 #define LOGGER_
 
 #include <mutex>
+#include <atomic>
 #include <random>
 #include <format>
+#include <cassert>
 #include <unistd.h>
 #include "common.hh"
 #include <filesystem>
@@ -65,7 +67,6 @@ private:
     // Private constructor for the singleton instance.
     //
     logger(
-        status_code* p_status,
         std::string* p_initial_message,
         const logger_configuration* p_logger_configuration);
 
@@ -96,7 +97,7 @@ public:
     static
     void
     log_error_fallback(
-        const character* p_message);
+        std::string&& p_message);
 
     //
     // Sets the activity id for the current thread.
@@ -112,6 +113,13 @@ public:
     static
     void
     reset_activity_id();
+
+    //
+    // Gets the logger initialization status.
+    //
+    static
+    bool
+    is_logger_initialized();
 
     //
     // Default activity id value.
@@ -176,7 +184,7 @@ private:
     //
     // Flag for determining is the singleton instance is initialized.
     //
-    static bool s_initialized;
+    static std::atomic<bool> s_initialized;
 
     //
     // Text for info level logs.
@@ -274,6 +282,56 @@ private:
     pid_t m_process_id;
     
 };
+
+//
+// Log info message macro.
+//
+#define log_info_message(p_format, ...) \
+    do \
+    { \
+        assert(logger::is_logger_initialized()); \
+        logger::log(log_level::info, std::format(p_format, ##__VA_ARGS__)); \
+    } \
+    while (false)
+
+//
+// Log warning message macro.
+//
+#define log_warning_message(p_format, ...) \
+    do \
+    { \
+        assert(logger::is_logger_initialized()); \
+        logger::log(log_level::warning, std::format(p_format, ##__VA_ARGS__)); \
+    } \
+    while (false)
+
+//
+// Log error message macro.
+//
+#define log_error_message(p_format, ...) \
+    do \
+    { \
+        assert(logger::is_logger_initialized()); \
+        logger::log(log_level::error, std::format(p_format, ##__VA_ARGS__)); \
+    } \
+    while (false)
+
+//
+// Log critical message macro.
+//
+#define log_critical_message(p_format, ...) \
+    do \
+    { \
+        if (logger::is_logger_initialized()) \
+        { \
+            logger::log(log_level::critical, std::format(p_format, ##__VA_ARGS__)); \
+        } \
+        else \
+        { \
+            logger::log_error_fallback(std::format(p_format, ##__VA_ARGS__)); \
+        } \
+    } \
+    while (false)
 
 } // namespace astra.
 

@@ -5,6 +5,7 @@ CMakeFiles/astra.dir/src/filesystem_utilities.cc.o: ../src/common.hh
 CMakeFiles/astra.dir/src/filesystem_utilities.cc.o: ../src/filesystem_utilities.cc
 CMakeFiles/astra.dir/src/filesystem_utilities.cc.o: ../src/filesystem_utilities.hh
 CMakeFiles/astra.dir/src/filesystem_utilities.cc.o: ../src/status.hh
+CMakeFiles/astra.dir/src/filesystem_utilities.cc.o: ../src/status_exception.hh
 
 CMakeFiles/astra.dir/src/logger.cc.o: ../src/common.hh
 CMakeFiles/astra.dir/src/logger.cc.o: ../src/filesystem_utilities.hh
@@ -12,6 +13,7 @@ CMakeFiles/astra.dir/src/logger.cc.o: ../src/logger.cc
 CMakeFiles/astra.dir/src/logger.cc.o: ../src/logger.hh
 CMakeFiles/astra.dir/src/logger.cc.o: ../src/random_identifier_generator.hh
 CMakeFiles/astra.dir/src/logger.cc.o: ../src/status.hh
+CMakeFiles/astra.dir/src/logger.cc.o: ../src/status_exception.hh
 CMakeFiles/astra.dir/src/logger.cc.o: ../src/system_configuration.hh
 CMakeFiles/astra.dir/src/logger.cc.o: ../src/timestamp.hh
 
@@ -20,6 +22,7 @@ CMakeFiles/astra.dir/src/main.cc.o: ../src/logger.hh
 CMakeFiles/astra.dir/src/main.cc.o: ../src/main.cc
 CMakeFiles/astra.dir/src/main.cc.o: ../src/random_identifier_generator.hh
 CMakeFiles/astra.dir/src/main.cc.o: ../src/status.hh
+CMakeFiles/astra.dir/src/main.cc.o: ../src/status_exception.hh
 CMakeFiles/astra.dir/src/main.cc.o: ../src/system_configuration.hh
 CMakeFiles/astra.dir/src/main.cc.o: ../src/system_server.hh
 
@@ -27,12 +30,14 @@ CMakeFiles/astra.dir/src/random_identifier_generator.cc.o: ../src/common.hh
 CMakeFiles/astra.dir/src/random_identifier_generator.cc.o: ../src/random_identifier_generator.cc
 CMakeFiles/astra.dir/src/random_identifier_generator.cc.o: ../src/random_identifier_generator.hh
 CMakeFiles/astra.dir/src/random_identifier_generator.cc.o: ../src/status.hh
+CMakeFiles/astra.dir/src/random_identifier_generator.cc.o: ../src/status_exception.hh
 
 CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o: ../src/common.hh
 CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o: ../src/http.hh
 CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o: ../src/server_endpoints/base_endpoint.cc
 CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o: ../src/server_endpoints/base_endpoint.hh
 CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o: ../src/status.hh
+CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o: ../src/status_exception.hh
 
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/common.hh
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/http.hh
@@ -40,6 +45,7 @@ CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/server_endpoints/register_object_endpoint.cc
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/server_endpoints/register_object_endpoint.hh
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/status.hh
+CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/status_exception.hh
 
 CMakeFiles/astra.dir/src/status_exception.cc.o: ../src/common.hh
 CMakeFiles/astra.dir/src/status_exception.cc.o: ../src/status.hh
@@ -50,6 +56,7 @@ CMakeFiles/astra.dir/src/system_configuration.cc.o: ../src/common.hh
 CMakeFiles/astra.dir/src/system_configuration.cc.o: ../src/logger.hh
 CMakeFiles/astra.dir/src/system_configuration.cc.o: ../src/random_identifier_generator.hh
 CMakeFiles/astra.dir/src/system_configuration.cc.o: ../src/status.hh
+CMakeFiles/astra.dir/src/system_configuration.cc.o: ../src/status_exception.hh
 CMakeFiles/astra.dir/src/system_configuration.cc.o: ../src/system_configuration.cc
 CMakeFiles/astra.dir/src/system_configuration.cc.o: ../src/system_configuration.hh
 
@@ -64,6 +71,7 @@ CMakeFiles/astra.dir/src/system_server.cc.o: ../src/system_server.hh
 
 CMakeFiles/astra.dir/src/timestamp.cc.o: ../src/common.hh
 CMakeFiles/astra.dir/src/timestamp.cc.o: ../src/status.hh
+CMakeFiles/astra.dir/src/timestamp.cc.o: ../src/status_exception.hh
 CMakeFiles/astra.dir/src/timestamp.cc.o: ../src/timestamp.cc
 CMakeFiles/astra.dir/src/timestamp.cc.o: ../src/timestamp.hh
 

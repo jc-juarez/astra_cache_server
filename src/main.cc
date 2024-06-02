@@ -27,8 +27,8 @@ int main(int argc, char** argv)
 
     if (status::failed(status))
     {
-        logger::log_error_fallback(std::format("<!> Astra cache server initial system configuration failed. Status={:#X}.\n",
-            status).c_str());
+        log_critical_message("Astra cache server initial system configuration failed. Status={:#X}.",
+            status);
 
         return EXIT_FAILURE;
     }
@@ -40,12 +40,11 @@ int main(int argc, char** argv)
 
     if (status::failed(status))
     {
-        logger::log_error_fallback(std::format("<!> Astra cache server initial system configuration failed. Status={:#X}.\n",
-            status).c_str());
+        log_critical_message("Astra cache server logger initialization failed. Status={:#X}.",
+            status);
 
         return EXIT_FAILURE;
     }
-
 
     astra::server::system_server server;
     server.start();

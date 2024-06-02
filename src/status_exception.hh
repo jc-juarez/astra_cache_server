@@ -9,7 +9,6 @@
 #define STATUS_EXCEPTION_
 
 #include <stdexcept>
-#include "status.hh"
 #include "common.hh"
 
 namespace astra
