@@ -41,6 +41,8 @@ CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o: ../src/status_exce
 
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/common.hh
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/http.hh
+CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/logger.hh
+CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/random_identifier_generator.hh
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/server_endpoints/base_endpoint.hh
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/server_endpoints/register_object_endpoint.cc
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/server_endpoints/register_object_endpoint.hh

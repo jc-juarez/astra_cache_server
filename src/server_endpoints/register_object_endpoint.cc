@@ -5,8 +5,8 @@
 // Author: jcjuarez
 // *************************************
 
+#include "../logger.hh"
 #include "register_object_endpoint.hh"
-#include <iostream> // delete.
 
 namespace astra
 {
@@ -22,7 +22,7 @@ std::shared_ptr<httpserver::http_response>
 register_object_endpoint::render_POST(
     const httpserver::http_request& p_request)
 {
-    std::cout << p_request.get_path() << std::endl;
+    log_info_message("This is the request: {}.", p_request.get_path());
     return std::shared_ptr<httpserver::string_response>(new httpserver::string_response("hello", http::status_code::ok, "text/plain")); 
 }
 
