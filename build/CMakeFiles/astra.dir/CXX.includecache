@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+/home/jcjuarez/astra-caching-server/src/astra_cache_server.cc
+logger.hh
+/home/jcjuarez/astra-caching-server/src/logger.hh
+system_server.hh
+/home/jcjuarez/astra-caching-server/src/system_server.hh
+astra_cache_server.hh
+/home/jcjuarez/astra-caching-server/src/astra_cache_server.hh
+system_configuration.hh
+/home/jcjuarez/astra-caching-server/src/system_configuration.hh
+
+/home/jcjuarez/astra-caching-server/src/astra_cache_server.hh
+string
+-
+vector
+-
+memory
+-
+common.hh
+/home/jcjuarez/astra-caching-server/src/common.hh
+
 /home/jcjuarez/astra-caching-server/src/common.hh
 cstdint
 -
@@ -34,6 +54,10 @@ filesystem
 random_identifier_generator.hh
 /home/jcjuarez/astra-caching-server/src/random_identifier_generator.hh
 
+/home/jcjuarez/astra-caching-server/src/main.cc
+astra_cache_server.hh
+/home/jcjuarez/astra-caching-server/src/astra_cache_server.hh
+
 /home/jcjuarez/astra-caching-server/src/random_identifier_generator.hh
 mutex
 -
@@ -52,14 +76,6 @@ stdexcept
 common.hh
 /home/jcjuarez/astra-caching-server/src/common.hh
 
-/home/jcjuarez/astra-caching-server/src/system_configuration.cc
-logger.hh
-/home/jcjuarez/astra-caching-server/src/logger.hh
-unordered_set
--
-system_configuration.hh
-/home/jcjuarez/astra-caching-server/src/system_configuration.hh
-
 /home/jcjuarez/astra-caching-server/src/system_configuration.hh
 string
 -
@@ -69,4 +85,12 @@ cstdlib
 -
 common.hh
 /home/jcjuarez/astra-caching-server/src/common.hh
+
+/home/jcjuarez/astra-caching-server/src/system_server.hh
+memory
+-
+common.hh
+/home/jcjuarez/astra-caching-server/src/common.hh
+httpserver.hpp
+-
 

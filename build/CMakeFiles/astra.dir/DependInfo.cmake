@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/jcjuarez/astra-caching-server/src/astra_cache_server.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/astra_cache_server.cc.o"
   "/home/jcjuarez/astra-caching-server/src/filesystem_utilities.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/filesystem_utilities.cc.o"
   "/home/jcjuarez/astra-caching-server/src/logger.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/logger.cc.o"
   "/home/jcjuarez/astra-caching-server/src/main.cc" "/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir/src/main.cc.o"

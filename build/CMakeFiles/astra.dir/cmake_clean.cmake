@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/astra.dir/src/astra_cache_server.cc.o"
   "CMakeFiles/astra.dir/src/filesystem_utilities.cc.o"
   "CMakeFiles/astra.dir/src/logger.cc.o"
   "CMakeFiles/astra.dir/src/main.cc.o"

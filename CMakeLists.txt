@@ -21,6 +21,7 @@ set(SOURCE_FILES
     src/random_identifier_generator.cc
     src/system_configuration.cc
     src/timestamp.cc
+    src/astra_cache_server.cc
     src/server_endpoints/base_endpoint.cc
     src/server_endpoints/register_object_endpoint.cc)
 

@@ -74,12 +74,12 @@ clean: CMakeFiles/astra.dir/clean
 CMakeFiles/astra.dir/all:
 	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/depend
 	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcjuarez/astra-caching-server/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target astra"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcjuarez/astra-caching-server/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target astra"
 .PHONY : CMakeFiles/astra.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/astra.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jcjuarez/astra-caching-server/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jcjuarez/astra-caching-server/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/astra.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jcjuarez/astra-caching-server/build/CMakeFiles 0
 .PHONY : CMakeFiles/astra.dir/rule

@@ -161,9 +161,22 @@ CMakeFiles/astra.dir/src/timestamp.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/astra.dir/src/timestamp.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcjuarez/astra-caching-server/src/timestamp.cc -o CMakeFiles/astra.dir/src/timestamp.cc.s
 
+CMakeFiles/astra.dir/src/astra_cache_server.cc.o: CMakeFiles/astra.dir/flags.make
+CMakeFiles/astra.dir/src/astra_cache_server.cc.o: ../src/astra_cache_server.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jcjuarez/astra-caching-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/astra.dir/src/astra_cache_server.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/astra.dir/src/astra_cache_server.cc.o -c /home/jcjuarez/astra-caching-server/src/astra_cache_server.cc
+
+CMakeFiles/astra.dir/src/astra_cache_server.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/astra.dir/src/astra_cache_server.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcjuarez/astra-caching-server/src/astra_cache_server.cc > CMakeFiles/astra.dir/src/astra_cache_server.cc.i
+
+CMakeFiles/astra.dir/src/astra_cache_server.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/astra.dir/src/astra_cache_server.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcjuarez/astra-caching-server/src/astra_cache_server.cc -o CMakeFiles/astra.dir/src/astra_cache_server.cc.s
+
 CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o: CMakeFiles/astra.dir/flags.make
 CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o: ../src/server_endpoints/base_endpoint.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jcjuarez/astra-caching-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jcjuarez/astra-caching-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o -c /home/jcjuarez/astra-caching-server/src/server_endpoints/base_endpoint.cc
 
 CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.i: cmake_force
@@ -176,7 +189,7 @@ CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.s: cmake_force
 
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: CMakeFiles/astra.dir/flags.make
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o: ../src/server_endpoints/register_object_endpoint.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jcjuarez/astra-caching-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jcjuarez/astra-caching-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o -c /home/jcjuarez/astra-caching-server/src/server_endpoints/register_object_endpoint.cc
 
 CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.i: cmake_force
@@ -197,6 +210,7 @@ astra_OBJECTS = \
 "CMakeFiles/astra.dir/src/random_identifier_generator.cc.o" \
 "CMakeFiles/astra.dir/src/system_configuration.cc.o" \
 "CMakeFiles/astra.dir/src/timestamp.cc.o" \
+"CMakeFiles/astra.dir/src/astra_cache_server.cc.o" \
 "CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o" \
 "CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o"
 
@@ -211,12 +225,13 @@ astra: CMakeFiles/astra.dir/src/logger.cc.o
 astra: CMakeFiles/astra.dir/src/random_identifier_generator.cc.o
 astra: CMakeFiles/astra.dir/src/system_configuration.cc.o
 astra: CMakeFiles/astra.dir/src/timestamp.cc.o
+astra: CMakeFiles/astra.dir/src/astra_cache_server.cc.o
 astra: CMakeFiles/astra.dir/src/server_endpoints/base_endpoint.cc.o
 astra: CMakeFiles/astra.dir/src/server_endpoints/register_object_endpoint.cc.o
 astra: CMakeFiles/astra.dir/build.make
 astra: /usr/local/lib/libhttpserver.a
 astra: CMakeFiles/astra.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jcjuarez/astra-caching-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable astra"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jcjuarez/astra-caching-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable astra"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/astra.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -5,7 +5,9 @@
 // Author: jcjuarez
 // *************************************
 
+#include "logger.hh"
 #include "system_server.hh"
+#include "system_configuration.hh"
 #include "server_endpoints/register_object_endpoint.hh"
 
 namespace astra
@@ -13,16 +15,36 @@ namespace astra
 namespace server
 {
 
-system_server::system_server()
+//
+// Register system endpoint with the HTTP server macro.
+//
+#define register_system_endpoint(p_endpoint_name, p_http_method) \
+    do \
+    { \
+    static endpoints::p_endpoint_name p_endpoint_name; \
+    register_endpoint( \
+        p_endpoint_name, \
+        p_http_method, \
+        p_endpoint_name.get_url()); \
+    } \
+    while (false)
+
+system_server::system_server(
+    const server_configuration& p_server_configuration)
 {
     try
     {
-        m_http_web_server = std::make_unique<httpserver::webserver>(httpserver::create_webserver(8080));
+        m_http_web_server = std::make_unique<httpserver::webserver>(httpserver::create_webserver(p_server_configuration.m_port_number));
     }
     catch (const std::exception& exception)
     {
-        // Log exception error.
-        throw status_exception(status::http_server_initialization_failed, "Failed to initialize the main HTTP server.");
+        status_code status = status::http_server_initialization_failed;
+
+        log_critical_message("Main system HTTP server initialization failed. Status={:#X}. Exception={}",
+            status,
+            exception.what());
+
+        throw status_exception(status, "Failed to initialize the main HTTP server.");
     }
 }
 
@@ -31,14 +53,25 @@ system_server::start()
 {
     status_code status = set_system_endpoints();
 
+    if (status::failed(status))
+    {
+        log_critical_message("Main system HTTP server startup failed. Status={:#X}.",
+            status);
+        
+        return status;
+    }
+
     try
     {
         m_http_web_server->start(true /* blocking */);
     }
     catch (const std::exception& exception)
     {
-        // Log exception error.
-        // std::cout << "Catched exception" << std::endl;
+        status = status::http_server_startup_failed;
+
+        log_critical_message("Main system HTTP server startup failed. Status={:#X}. Exception={}",
+            status,
+            exception.what());
     }
 
     return status;
@@ -47,17 +80,22 @@ system_server::start()
 status_code
 system_server::set_system_endpoints()
 {
-    //
-    // Register an object with the caching server.
-    //
-    static endpoints::register_object_endpoint register_object_endpoint;
+    try
+    {
+        register_system_endpoint(register_object_endpoint, http::c_post_method);
 
-    register_endpoint(
-        register_object_endpoint,
-        http::c_post_method,
-        endpoints::register_object_endpoint::c_url);
+        return status::success;
+    }
+    catch (const std::exception& exception)
+    {
+        status_code status = status::endpoints_setup_failed;
 
-    return status::success; // catch errors with try catch.
+        log_critical_message("Failed to set the system server endpoints. Status={:#X}. Exception={}",
+            status,
+            exception.what());
+        
+        return status;
+    }
 }
 
 } // namespace server.

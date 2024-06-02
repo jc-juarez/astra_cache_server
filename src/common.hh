@@ -65,6 +65,7 @@ using int16 = std::int16_t;
 // Signed 4 bytes.
 //
 using int32 = std::int32_t;
+using exit_code = std::int32_t;
 
 //
 // Signed 8 bytes.

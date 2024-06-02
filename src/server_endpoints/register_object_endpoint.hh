@@ -41,7 +41,7 @@ public:
     //
     // Endpoint URL.
     //
-    static constexpr const character* c_url = "/astra/register-object/";
+    static constexpr const character* c_url = "/astra/register-object";
 
 };
 

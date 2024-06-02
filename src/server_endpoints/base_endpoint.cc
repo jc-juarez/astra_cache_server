@@ -14,8 +14,17 @@ namespace server
 namespace endpoints
 {
 
-base_endpoint::base_endpoint( /* Pass the caching_engine class handle here. */ )
+base_endpoint::base_endpoint(
+    const character* p_url
+     /* Pass the caching_engine class handle here. */ )
+    : m_url(p_url)
 {}
+
+const character*
+base_endpoint::get_url() const
+{
+    return m_url.c_str();
+}
 
 } // namespace endpoints.
 } // namespace server.

@@ -14,6 +14,9 @@
 
 namespace astra
 {
+
+struct server_configuration;
+
 namespace server
 {
 
@@ -28,7 +31,8 @@ public:
     //
     // Constructor.
     //
-    system_server();
+    system_server(
+        const server_configuration& p_server_configuration);
 
     //
     // Starts the system server.

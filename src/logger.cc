@@ -140,12 +140,12 @@ logger::log(
             p_log_level,
             p_message.c_str());
     }
-    catch (const status_exception& exception)
+    catch (const status_exception& status_exception)
     {
         //
         // Initialization has failed; the error will be circled back to the upper level caller.
         //
-        *p_status = exception.get_status();
+        *p_status = status_exception.get_status();
     }
 }
 

@@ -145,6 +145,11 @@ public:
     //
     status_code_definition(logging_incremental_search_failed, 0x8'0000011);
 
+    //
+    // Failed to set the system server endpoints.
+    //
+    status_code_definition(endpoints_setup_failed, 0x8'0000012);
+
 };
 
 } // namespace astra.

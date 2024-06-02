@@ -123,6 +123,33 @@ astra/fast:
 	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/build
 .PHONY : astra/fast
 
+src/astra_cache_server.o: src/astra_cache_server.cc.o
+
+.PHONY : src/astra_cache_server.o
+
+# target to build an object file
+src/astra_cache_server.cc.o:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/astra_cache_server.cc.o
+.PHONY : src/astra_cache_server.cc.o
+
+src/astra_cache_server.i: src/astra_cache_server.cc.i
+
+.PHONY : src/astra_cache_server.i
+
+# target to preprocess a source file
+src/astra_cache_server.cc.i:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/astra_cache_server.cc.i
+.PHONY : src/astra_cache_server.cc.i
+
+src/astra_cache_server.s: src/astra_cache_server.cc.s
+
+.PHONY : src/astra_cache_server.s
+
+# target to generate assembly for a file
+src/astra_cache_server.cc.s:
+	$(MAKE) -f CMakeFiles/astra.dir/build.make CMakeFiles/astra.dir/src/astra_cache_server.cc.s
+.PHONY : src/astra_cache_server.cc.s
+
 src/filesystem_utilities.o: src/filesystem_utilities.cc.o
 
 .PHONY : src/filesystem_utilities.o
@@ -402,6 +429,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... astra"
+	@echo "... src/astra_cache_server.o"
+	@echo "... src/astra_cache_server.i"
+	@echo "... src/astra_cache_server.s"
 	@echo "... src/filesystem_utilities.o"
 	@echo "... src/filesystem_utilities.i"
 	@echo "... src/filesystem_utilities.s"

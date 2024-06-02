@@ -16,6 +16,7 @@ namespace endpoints
 {
 
 register_object_endpoint::register_object_endpoint( /* Pass the caching_engine class handle here. */ )
+    : base_endpoint(c_url)
 {}
 
 std::shared_ptr<httpserver::http_response>

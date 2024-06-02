@@ -8,6 +8,7 @@
 #ifndef BASE_ENDPOINT_
 #define BASE_ENDPOINT_
 
+#include <string>
 #include <memory>
 #include "../http.hh"
 #include <httpserver.hpp>
@@ -30,9 +31,22 @@ public:
     //
     // Constructor.
     //
-    base_endpoint( /* Pass the caching_engine class handle here. */ );
+    base_endpoint(
+        const character* p_url
+        /* Pass the caching_engine class handle here. */ );
+
+    //
+    // Gets the URL associated to the endpoint.
+    //
+    const character*
+    get_url() const;
 
 private:
+
+    //
+    // Endpoint URL.
+    //
+    std::string m_url;
 
     //
     // Caching engine handle.
