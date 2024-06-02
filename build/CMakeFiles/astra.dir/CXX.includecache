@@ -54,10 +54,6 @@ filesystem
 random_identifier_generator.hh
 /home/jcjuarez/astra-caching-server/src/random_identifier_generator.hh
 
-/home/jcjuarez/astra-caching-server/src/main.cc
-astra_cache_server.hh
-/home/jcjuarez/astra-caching-server/src/astra_cache_server.hh
-
 /home/jcjuarez/astra-caching-server/src/random_identifier_generator.hh
 mutex
 -

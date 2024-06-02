@@ -86,8 +86,17 @@ astra_cache_server::initialize(
             return status;
         }
 
-        astra::server::system_server server(astra_system_configuration.m_server_configuration);
-        server.start();
+        std::unique_ptr<astra_cache_server> server = std::make_unique<astra_cache_server>(astra_system_configuration);
+
+        status = server->start_server();
+
+        if (status::failed(status))
+        {
+            log_critical_message("Astra cache server startup process failed. Status={:#X}.",
+                status);
+
+            return status;
+        }
 
         return status::success;
     }
