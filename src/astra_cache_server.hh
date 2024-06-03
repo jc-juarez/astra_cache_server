@@ -23,7 +23,7 @@ namespace server
 
 class system_server;
 
-}
+} // namespace server.
 
 //
 // Main class for the astra cache server system.

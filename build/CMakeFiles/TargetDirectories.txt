@@ -1,3 +1,0 @@
-/home/jcjuarez/astra-caching-server/build/CMakeFiles/rebuild_cache.dir
-/home/jcjuarez/astra-caching-server/build/CMakeFiles/edit_cache.dir
-/home/jcjuarez/astra-caching-server/build/CMakeFiles/astra.dir
