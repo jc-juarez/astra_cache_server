@@ -5,10 +5,10 @@
 // Author: jcjuarez
 // *************************************
 
-#include "logger.hh"
 #include "system_server.hh"
+#include "../common/logger.hh"
 #include "astra_cache_server.hh"
-#include "system_configuration.hh"
+#include "../common/system_configuration.hh"
 
 namespace astra
 {

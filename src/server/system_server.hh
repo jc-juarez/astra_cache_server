@@ -9,8 +9,8 @@
 #define SYSTEM_SERVER_
 
 #include <memory>
-#include "common.hh"
 #include <httpserver.hpp>
+#include "../common/common.hh"
 
 namespace astra
 {

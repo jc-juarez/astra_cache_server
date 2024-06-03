@@ -8,8 +8,8 @@
 #ifndef STATUS_EXCEPTION_
 #define STATUS_EXCEPTION_
 
-#include <stdexcept>
 #include "common.hh"
+#include <stdexcept>
 
 namespace astra
 {

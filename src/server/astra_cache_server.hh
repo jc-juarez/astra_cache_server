@@ -11,7 +11,7 @@
 #include <string>
 #include <vector>
 #include <memory>
-#include "common.hh"
+#include "../common/common.hh"
 
 namespace astra
 {

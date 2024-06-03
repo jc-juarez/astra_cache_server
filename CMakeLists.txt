@@ -13,17 +13,23 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 set(SOURCE_FILES
-    src/main.cc
-    src/system_server.cc
-    src/status_exception.cc
-    src/filesystem_utilities.cc
-    src/logger.cc
-    src/random_identifier_generator.cc
-    src/system_configuration.cc
-    src/timestamp.cc
-    src/astra_cache_server.cc
-    src/server_endpoints/base_endpoint.cc
-    src/server_endpoints/register_object_endpoint.cc)
+    # Server components.
+    src/server/main.cc
+    src/server/system_server.cc
+    src/server/astra_cache_server.cc
+    src/server/server_endpoints/base_endpoint.cc
+    src/server/server_endpoints/register_object_endpoint.cc
+
+    # Cache components.
+
+    # Common components.
+    src/common/logger.cc
+    src/common/timestamp.cc
+    src/common/status_exception.cc
+    src/common/system_configuration.cc
+    src/common/filesystem_utilities.cc
+    src/common/random_identifier_generator.cc
+)
 
 add_executable(astra ${SOURCE_FILES})
 

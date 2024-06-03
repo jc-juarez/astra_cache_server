@@ -5,7 +5,7 @@
 // Author: jcjuarez
 // *************************************
 
-#include "../logger.hh"
+#include "../../common/logger.hh"
 #include "register_object_endpoint.hh"
 
 namespace astra
