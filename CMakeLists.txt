@@ -15,9 +15,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(SOURCE_FILES
     # Server components.
     src/server/main.cc
+    src/server/http_response.cc
     src/server/system_server.cc
     src/server/astra_cache_server.cc
     src/server/server_endpoints/base_endpoint.cc
+    src/server/server_endpoints/default_endpoints.cc
     src/server/server_endpoints/register_object_endpoint.cc
 
     # Cache components.

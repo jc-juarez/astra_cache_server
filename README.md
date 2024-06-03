@@ -1,6 +1,6 @@
 # Astra Cache Server ⚡🌗
 
-Astra Cache Server is a fast performance local-storage caching server implemented in C++ for GNU/Linux derived operating systems.
+Astra Cache Server is a fast performance local-storage HTTP caching server implemented in C++ for GNU/Linux derived operating systems.
 
 How to Run Astra
 ==========

@@ -1,12 +1,12 @@
 // *************************************
 // Astra Cache Server
 // Utilities
-// 'http.hh'
+// 'http_codes.hh'
 // Author: jcjuarez
 // *************************************
 
-#ifndef HTTP_
-#define HTTP_
+#ifndef HTTP_CODES_
+#define HTTP_CODES_
 
 #include "../common/common.hh"
 
@@ -49,6 +49,8 @@ public:
     enum status_code
     {
         ok = 200,
+        not_found = 404,
+        method_not_allowed = 405,
         internal_server_error = 500
     };
 

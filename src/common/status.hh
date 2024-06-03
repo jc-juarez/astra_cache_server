@@ -150,6 +150,11 @@ public:
     //
     status_code_definition(endpoints_setup_failed, 0x8'0000012);
 
+    //
+    // Failed to obtain access for a particular resource.
+    //
+    status_code_definition(access_failure, 0x8'0000013);
+
 };
 
 } // namespace astra.

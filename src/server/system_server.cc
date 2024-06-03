@@ -8,6 +8,7 @@
 #include "system_server.hh"
 #include "../common/logger.hh"
 #include "../common/system_configuration.hh"
+#include "server_endpoints/default_endpoints.hh"
 #include "server_endpoints/register_object_endpoint.hh"
 
 namespace astra
@@ -34,7 +35,10 @@ system_server::system_server(
 {
     try
     {
-        m_http_web_server = std::make_unique<httpserver::webserver>(httpserver::create_webserver(p_server_configuration.m_port_number));
+        m_http_web_server = std::make_unique<httpserver::webserver>(
+            httpserver::create_webserver(p_server_configuration.m_port_number)
+            .not_found_resource(&astra::server::endpoints::create_resource_not_found_response)
+            .method_not_allowed_resource(&astra::server::endpoints::create_method_not_allowed_response));
     }
     catch (const std::exception& exception)
     {

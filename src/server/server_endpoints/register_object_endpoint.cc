@@ -5,6 +5,7 @@
 // Author: jcjuarez
 // *************************************
 
+#include "../http_response.hh"
 #include "../../common/logger.hh"
 #include "register_object_endpoint.hh"
 
@@ -24,7 +25,8 @@ register_object_endpoint::render_POST(
     const httpserver::http_request& p_request)
 {
     log_info_message("This is the request: {}.", p_request.get_path());
-    return std::shared_ptr<httpserver::string_response>(new httpserver::string_response("hello", http::status_code::ok, "text/plain")); 
+
+    return create_http_response(status::success, http::status_code::ok, "Returning data");
 }
 
 } // namespace endpoints.

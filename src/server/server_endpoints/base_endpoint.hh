@@ -10,8 +10,8 @@
 
 #include <string>
 #include <memory>
-#include "../http.hh"
 #include <httpserver.hpp>
+#include "../http_codes.hh"
 
 namespace astra
 {
